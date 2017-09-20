@@ -20,15 +20,22 @@
             <form class="form-pos" action="/login" method="post"> 
                 <div class="form-group">
                      <label class="control-label inline">Username</label>
-                     <input type="username" class="form-control inp inline" placeholder="username">
+                     <input type="username" name="username" class="form-control inp inline" placeholder="username">
                 </div>
                 <div class="form-group">
                      <label class="control-label inline">Password</label>
-                     <input type="password" class="form-control inp inline" placeholder="password">
+                     <input type="password" name="pwd" class="form-control inp inline" placeholder="password">
                 </div>
-                <div><p><%-error%></p></div>
+                <div class="info">
+                <% if(typeof(error) != 'undefined' && error){%>
+                    <%=error%>
+                <% }%>
+                <% if(typeof(success) != 'undefined' && success){%>
+                    <%=success%>
+                <% }%>
+                </div>
                 <div class="but">
-                    <button class="btn btn-primary">signin</button>
+                    <button type="submit" class="btn btn-primary">signin</button>
                 </div>
             </form>
         </div>
