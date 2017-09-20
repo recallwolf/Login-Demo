@@ -6,6 +6,12 @@ var eventproxy = require('eventproxy');
   res.send('respond with a resource');
 });*/
 
+
+//主页
+router.get('/', function(req, res) {
+  res.render('index');
+});
+
 //登录界面
 router.get('/login', function(req, res){
 	res.render('login');
@@ -25,7 +31,7 @@ router.post('/login', function(req, res){
 	//判断用户信息是否为空
 	if(!username || !pwd){
 		res.status(422);
-		res.render('login', {error: '您填写的不完整'})；
+		res.render('login', {error: '您填写的不完整'});
 	}
 });
 

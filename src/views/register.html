@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>register</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="stylesheets\register.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	</head>
+	<body>
+        <div class="build">
+            <h2>注册</h2>
+            <form class="form-pos" action="/register" method="post"> 
+                <div class="form-group">
+                     <label class="control-label inline">Username</label>
+                     <input type="username" class="form-control inp inline" placeholder="username">
+                </div>
+                <div class="form-group">
+                     <label class="control-label inline">Email</label>
+                     <input type="email" class="form-control inp inline" placeholder="email">
+                </div>
+                <div class="form-group">
+                     <label class="control-label inline">Password</label>
+                     <input type="password" class="form-control inp inline" placeholder="password">
+                </div>
+                <div class="form-group">
+                     <label class="control-label inline">repassword</label>
+                     <input type="password" class="form-control inp inline" placeholder="repassword">
+                </div>
+                <div><p><%-error%></p></div>
+                <div class="but">
+                    <button class="btn btn-primary">signup</button>
+                </div>
+            </form>
+        </div>
+	</body>
+</html>
