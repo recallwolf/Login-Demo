@@ -29,13 +29,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //
 app.use(session({
-  secret: 'dsfjdsfjdslfjlsdjfl',
-  store: new RedisStore({
-    port: 6379,
-    host: '127.0.0.1'
-  }),
-  resave: true,
-  saveUninitialized: true
+	secret: 'dsfjdsfjdslfjlsdjfl',
+  	store: new RedisStore({
+    	port: 6379,
+    	host: '127.0.0.1'
+  	}),
+  	resave: true,
+  	saveUninitialized: true
 }))
 //app.use('/', index);
 app.use('/', web_router);
