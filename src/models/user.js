@@ -1,10 +1,9 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongdb://127.0.0.1/node_demo');
+var mongoose = require('../mongoose_helper').mongoose;
 
 var UserSchema = new mongoose.Schema({
 	username: String,
 	pwd: String,
-	email: String,
+	email: String
 });
 
 UserSchema.statics.getUserBySignupInfo = function(username, email, callback){
@@ -13,10 +12,10 @@ UserSchema.statics.getUserBySignupInfo = function(username, email, callback){
 };
 
 UserSchema.statics.addUser = function(user, callback){
-	this.creat(user, callback);
+	this.create(user, callback);
 };
 
-UserSchema.statics.getUser= function(username, pwd, callback){
+UserSchema.statics.getUser = function(username, pwd, callback){
 	this.findOne({username: username, pwd: pwd}, callback);
 };
 

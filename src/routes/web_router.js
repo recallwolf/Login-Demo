@@ -35,10 +35,10 @@ router.post('/login', function(req, res){
 	}
 	UserModel.getUser(username, pwd, function(err, user){
 		if(user){
-			req.seesion.user = user;
+			req.session.user = user;
 			res.render('login', {success: '登陆成功'});
 		}
-		if(err){
+		else{
 			res.status(422);
 			res.render('login', {error: '用户名或密码错误'});
 		}
@@ -78,9 +78,9 @@ router.post('/register', function(req, res){
 		if(users.length > 0){
 			ep.emit('info_error', '用户名或邮箱已存在');
 		}
-		UserModel.addUser({username: username, pwd: pwd, email: emial}, function(err, result){
+		UserModel.addUser({username: username, pwd: pwd, email: email}, function(err, result){
 			if(result){
-				res.render('/register', {success: '恭喜你注册成功'});
+				res.render('register', {success: '恭喜你注册成功'});
 			}
 			if(err){
 				ep.emit('info_error', '注册失败');

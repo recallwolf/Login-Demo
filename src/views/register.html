@@ -34,6 +34,7 @@
                      <label class="control-label inline">repassword</label>
                      <input type="password" name="repwd" class="form-control inp inline" placeholder="repassword">
                 </div>
+                <div class="info">
                 <% if(typeof(error) != 'undefined' && error){%>
                 <%=error%>
                 <% }%>
@@ -41,6 +42,7 @@
                 <% if(typeof(success) != 'undefined' && success){%>
                 <%=success%>
                 <% }%>
+                </div>
                 <div class="but">
                     <button class="btn btn-primary">signup</button>
                 </div>
