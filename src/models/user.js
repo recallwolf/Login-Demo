@@ -7,7 +7,7 @@ var UserSchema = new mongoose.Schema({
 });
 
 UserSchema.statics.getUserBySignupInfo = function(username, email, callback){
-	var cond = ['$or', {username: username}, {email: email}];
+	var cond = {username: username, email: email};
 	this.find(cond, callback);
 };
 

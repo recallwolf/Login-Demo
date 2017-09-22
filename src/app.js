@@ -36,7 +36,12 @@ app.use(session({
   	}),
   	resave: true,
   	saveUninitialized: true
-}))
+}));
+
+app.use(function(req, res, next){
+  app.locals.current_user = req.session.user;
+  next();
+});
 //app.use('/', index);
 app.use('/', web_router);
 //app.use('/users', users);
