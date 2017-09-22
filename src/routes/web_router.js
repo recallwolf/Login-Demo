@@ -78,14 +78,16 @@ router.post('/register', function(req, res){
 		if(users.length > 0){
 			ep.emit('info_error', '用户名或邮箱已存在');
 		}
-		UserModel.addUser({username: username, pwd: pwd, email: email}, function(err, result){
-			if(result){
-				res.render('register', {success: '恭喜你注册成功'});
-			}
-			if(err){
-				ep.emit('info_error', '注册失败');
-			}
-		});
+		else{
+			UserModel.addUser({username: username, pwd: pwd, email: email}, function(err, result){
+				if(result){
+					res.render('register', {success: '恭喜你注册成功'});
+				}
+				if(err){
+					ep.emit('info_error', '注册失败');
+				}
+			});
+		}
 	});
 });
 
